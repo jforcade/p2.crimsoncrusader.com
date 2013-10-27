@@ -2,7 +2,7 @@
 
 # The DOC_ROOT and APP_PATH constant have to happen in the actual app
 
-# Entered 10/27/2013 @ 11:30
+# Entered 10/27/2013 @ 11:34
 
 	# Document root, ex: /path/to/home/app.com/../ (uses ./ on CLI)
 	define('DOC_ROOT', empty($_SERVER['DOCUMENT_ROOT']) ? './' : realpath($_SERVER['DOCUMENT_ROOT']).'/../');
