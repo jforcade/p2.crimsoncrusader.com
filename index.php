@@ -1,7 +1,7 @@
 <?php
 
 # The DOC_ROOT and APP_PATH constant have to happen in the actual app
-# testing hook
+# last test for hook
 
 	# Document root, ex: /path/to/home/app.com/../ (uses ./ on CLI)
 	define('DOC_ROOT', empty($_SERVER['DOCUMENT_ROOT']) ? './' : realpath($_SERVER['DOCUMENT_ROOT']).'/../');
