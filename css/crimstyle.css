@@ -1,0 +1,63 @@
+﻿body {
+		background-color: red;
+}
+
+head 
+{
+	text-align: center;
+	color: #FFFFFF;
+	font-family: garamond, courier, arial, helvetica, sans-serif;
+	font-size: 40px;
+	font-style: normal;
+	background-color: red;
+}
+
+h1 
+{
+	text-align: center;
+	color: #FFFFFF;
+	font-family: garamond, courier, arial, helvetica, sans-serif;
+	font-size: 40px;
+	font-style: normal;
+	background-color: red;
+}
+
+h2 
+{
+	text-align: center;
+	color: #FFFFFF;
+	font-family: garamond, courier, arial, helvetica, sans-serif;
+	font-size: 40px;
+	font-style: normal;
+	background-color: red;
+}
+
+div.img1
+{
+	float: right;
+}
+
+div .img2
+{
+	float: right;
+}
+
+p 
+{
+	text-align: center;
+	margin-right:50px;
+	margin-left:50px;
+	color: #FFFFFF;
+	font-family: garamond, arial, helvetica, sans-serif;
+	font-size: 20px;	
+	background-color: red;}
+
+p2 
+{
+	text-align: center;
+	color:  #FFFFFF;
+	font-family: garamond, arial, helvetica, sans-serif;
+	font-size: 14px;	
+	background-color: red;
+}
+

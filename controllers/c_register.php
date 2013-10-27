@@ -1,6 +1,6 @@
 <?php
 
-class index_controller extends base_controller {
+class register_controller extends base_controller {
 	
 	/*-------------------------------------------------------------------------------------------------
 
@@ -12,11 +12,11 @@ class index_controller extends base_controller {
 	/*-------------------------------------------------------------------------------------------------
 	Accessed via http://localhost/index/index/
 	-------------------------------------------------------------------------------------------------*/
-	public function index() {
+	public function register() {
 		
 		# Any method that loads a view will commonly start with this
 		# First, set the content of the template with a view file
-			$this->template->content = View::instance('v_login');
+			$this->template->content = View::instance('v_register');
 			
 		# Now set the <title> tag
 			$this->template->title = "Crimson Users";
