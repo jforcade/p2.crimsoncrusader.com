@@ -31,7 +31,7 @@ A email designated to receive messages from the server. Examples:
 	define('SYSTEM_EMAIL', 'joe.forcade@gmail.com'); 
 
 # Default DB name for this app
-	define('DB_NAME', 'p2_crimsoncrusader_com'); 
+	define('DB_NAME', 'crimson3_p2_crimsoncrusader_com'); 
 
 # Timezone
 	define('TIMEZONE', 'America/New_York');
@@ -43,10 +43,10 @@ A email designated to receive messages from the server. Examples:
 	//define('SMTP_PASSWORD', '');
 
 # For extra security, you might want to set different salts than what the core uses
-	define('PASSWORD_SALT', '');
-	define('TOKEN_SALT', '');
+	//define('PASSWORD_SALT', '');
+	//define('TOKEN_SALT', '');
 
 #  change to below after testing
 	
-	//define('PASSWORD_SALT', 'dlkj65fghoiuss12dfg');
-	//define('TOKEN_SALT', 'mns195bdkjfgh314owierjs');
+	define('PASSWORD_SALT', 'dlkj65fghoiuss12dfg');
+	define('TOKEN_SALT', 'mns195bdkjfgh314owierjs');
