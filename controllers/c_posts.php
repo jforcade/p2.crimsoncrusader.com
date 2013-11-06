@@ -45,7 +45,6 @@ class posts_controller extends base_controller {
 		
 	}
 	
-	
 	/*-------------------------------------------------------------------------------------------------
 	View all posts
 	-------------------------------------------------------------------------------------------------*/
@@ -151,6 +150,68 @@ class posts_controller extends base_controller {
 	
 	}
 	
+	/*-------------------------------------------------------------------------------------------------
+		Login to display and select Posts for editing or deletion
+	-------------------------------------------------------------------------------------------------*/
+	public function posts() {
 	
+		# Set up view
+		$this->template->content = View::instance("v_posts_posts");
+		
+		# Set up query to get all users
+		$q = 'SELECT *
+			FROM posts
+			WHERE user_id = '.$this->user->user_id;
+			
+		# Run query
+		$users = DB::instance(DB_NAME)->select_rows($q);
+		
+		# Pass data to the view
+		$this->template->content->users       = $users;
+		
+		# Render view
+		echo $this->template;
+		
+	}
+	
+	/*-------------------------------------------------------------------------------------------------
+	Removes the specified row in the posts table by post_id from My Post view : v_post_posts.php
+	-------------------------------------------------------------------------------------------------*/
+	public function remove($post_id) {
+	
+	    # Set up the where condition
+	    $where_condition = 'WHERE post_id = '.$post_id;
+	    
+	    # Run the delete
+	    DB::instance(DB_NAME)->delete('posts', $where_condition);
+	
+	    # Send them back
+	    Router::redirect("/posts/posts");
+	
+	}
+	
+	/*-------------------------------------------------------------------------------------------------
+		Login to display and select Posts for editing or deletion
+	-------------------------------------------------------------------------------------------------*/
+	public function profile() {
+	
+		# Set up view
+		$this->template->content = View::instance("v_posts_profile");
+		
+		# Set up query to get all users
+		$q = 'SELECT *
+			FROM users
+			WHERE user_id = '.$this->user->user_id;
+			
+		# Run query
+		$users = DB::instance(DB_NAME)->select_rows($q);
+		
+		# Pass data to the view
+		$this->template->content->users       = $users;
+		
+		# Render view
+		echo $this->template;
+		
+	}
 	
 } # eoc

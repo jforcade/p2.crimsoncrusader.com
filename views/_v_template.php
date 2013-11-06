@@ -26,10 +26,10 @@
 						
 					<?php if($user): ?>
 						<a href='/posts/add'>Add Post</a>
-						<a href='/posts/'>View Posts</a>
-						<a href='/posts/'>Edit Posts</a>
-						<a href='/posts/'>Delete Posts</a>
+						<a href='/posts/posts'>My Posts</a>
 						<a href='/posts/users'>Follow Users</a>
+						<a href='/posts/'>User Posts</a>
+						<a href='/posts/profile'>View Profile</a>
 						<a href='/users/logout'>Logout</a>
 					<?php else: ?>
 						<a href='/users/signup'>Sign Up</a>
