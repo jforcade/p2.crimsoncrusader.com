@@ -3,6 +3,9 @@
 class base_controller {
 	
 	public $user;
+	// Added message variable to indicate situatio specific messages
+	// under the navigation menu, e.g., logged out, etc. 
+	public $msg;
 	public $userObj;
 	public $template;
 	public $email_template;
@@ -24,6 +27,9 @@ class base_controller {
 								
 		# So we can use $user in views			
 			$this->template->set_global('user', $this->user);
+
+		# So we can use $msg in views			
+			$this->template->set_global('msg', 'You must Sign Up and Login to access Member areas');
 			
 	}
 	

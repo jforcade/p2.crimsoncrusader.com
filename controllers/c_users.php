@@ -4,8 +4,12 @@ class users_controller extends base_controller {
 	
 	public function __construct() {
 		parent::__construct();
-	  	echo "users_controller construct called<br>";
+	  	/*echo "users_controller construct called<br>";*/
 	} 
+
+    public function index() {
+		echo "this is the index page";
+	}
 
     public function signup() {
 
@@ -20,6 +24,10 @@ class users_controller extends base_controller {
 
 	public function p_signup() {
 
+		//echo "<pre>";
+		//	print_r($_POST);
+		//echo "<pre>";
+	
 		# More data we want stored with the user
 		$_POST['created']  = Time::now();
 		$_POST['modified'] = Time::now();
@@ -35,19 +43,20 @@ class users_controller extends base_controller {
 
 		# For now, just confirm they've signed up - 
 		# You should eventually make a proper View for this
-		echo 'You\'re signed up';
+		
+		//echo 'You\'re signed up';
 
+		Router::redirect("/");
 	}
 
 public function login() {
 
-    # Setup view
+	# Setup view
         $this->template->content = View::instance('v_users_login');
         $this->template->title   = "Login";
 
     # Render template
         echo $this->template;
-
 }
 
 public function p_login() {
@@ -70,12 +79,18 @@ public function p_login() {
     # If we didn't find a matching token in the database, it means login failed
     if(!$token) {
 
-        # Send them back to the login page
-        Router::redirect("/users/login/");
+		# So we can use $msg in views			
+		$this->template->set_global('msg', 'Login failed');
+
+	
+        //# Send them back to the login page
+        //Router::redirect("/users/logfail/");
 
     # But if we did, login succeeded! 
     } else {
 
+		echo 'You have logged in!';
+	
         /* 
         Store this token in a cookie using setcookie()
         Important Note: *Nothing* else can echo to the page before setcookie is called
@@ -88,35 +103,80 @@ public function p_login() {
         setcookie("token", $token, strtotime('+1 year'), '/');
 
         # Send them to the main page - or whever you want them to go
-        Router::redirect("/");
+        //Router::redirect("/");
+		
+		//  figure and enter one of those debug print statements she does.
 
+        Router::redirect("/users/posts/");
+
+		
     }
 
 }
 
-	public function logout() {
-		echo "This is the logout page";
-	} # eom
-	
-	public function profile($user_name = NULL) {
+	/*-------------------------------------------------------------------------------------------------
+	No view needed here, they just goto /users/logout, it logs them out and sends them
+	back to the homepage.	
+	-------------------------------------------------------------------------------------------------*/
+    public function logout() {
+       
+       # Generate a new token they'll use next time they login
+       $new_token = sha1(TOKEN_SALT.$this->user->email.Utils::generate_random_string());
+       
+       # Update their row in the DB with the new token
+       $data = Array(
+       	'token' => $new_token
+       );
+       DB::instance(DB_NAME)->update('users',$data, 'WHERE user_id ='. $this->user->user_id);
+       
+       # Delete their old token cookie by expiring it
+       setcookie('token', '', strtotime('-1 year'), '/');
+       
+       # Send them back to the homepage
+       Router::redirect('/');
+       
+    }
 
-		/*
-		If you look at _v_template you'll see it prints a $content variable in the <body>
-		Knowing that, let's pass our v_users_profile.php view fragment to $content so 
-		it's printed in the <body>
-		*/
-		$this->template->content = View::instance('v_users_profile');
+	public function posts() {
 
-		# $title is another variable used in _v_template to set the <title> of the page
-		$this->template->title = "Profile";
+		# Setup view
+			$this->template->content = View::instance('v_posts');
+			$this->template->title   = "Posts";
 
-		# Pass information to the view fragment
-		$this->template->content->user_name = $user_name;
-
-		# Render View
-		echo $this->template;
+		# Render template
+			echo $this->template;
 
 	}
+
+	public function logfail() {
+
+		# Setup view
+			$this->template->content = View::instance('v_logfail');
+			$this->template->title   = "Login Failed";
+
+		# Render template
+			echo $this->template;
+
+	}
+
+	public function profile($user_name = NULL) {
+		
+		# Only logged in users are allowed...
+		if(!$this->user) {
+			die('Members only. <a href="/users/login">Login</a>');
+		}
+		
+		# Set up the View
+		$this->template->content = View::instance('v_users_profile');
+		$this->template->title   = "Profile";
+				
+		# Pass the data to the View
+		$this->template->content->user_name = $user_name;
+		
+		# Display the view
+		echo $this->template;
+				
+    }
 
 	
 } # End of class

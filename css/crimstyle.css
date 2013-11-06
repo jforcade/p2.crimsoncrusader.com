@@ -1,63 +1,81 @@
 ﻿body {
-		background-color: red;
+	width: 90%;
+	margin: 0 auto;
+	font-family: "Courier New", Courier, monospace;
+	background-color: white;
 }
 
-head 
-{
+.col-md-4,.col-md-8{
+margin-bottom: -99999px;
+padding-bottom: 99999px;
+background-color: lightgrey;
+}
+
+.col-wrap{
+overflow: hidden; 
+}
+
+#css-container {
+	background-color: lightgrey;
+}
+
+#menu{
+	width: 90%;
+	height: 30px;
+	margin: 1%;
+	float: center;
+	font-size: 120%;
+	font-family: "Courier New", Courier, monospace;
+	letter-spacing: 0.55em;
+	background-color: grey;
 	text-align: center;
-	color: #FFFFFF;
-	font-family: garamond, courier, arial, helvetica, sans-serif;
-	font-size: 40px;
-	font-style: normal;
-	background-color: red;
 }
 
-h1 
-{
+#welcome{
+	width: 90%;
+	padding: 10px;
+	font-size: 100%;
+	font-family: "Courier New", Courier, monospace;
+	foreground-color: red;
+	letter-spacing: 0.55em;	
+	background-color: #dcdcdc;
 	text-align: center;
-	color: #FFFFFF;
-	font-family: garamond, courier, arial, helvetica, sans-serif;
-	font-size: 40px;
-	font-style: normal;
-	background-color: red;
 }
 
-h2 
-{
-	text-align: center;
-	color: #FFFFFF;
-	font-family: garamond, courier, arial, helvetica, sans-serif;
-	font-size: 40px;
-	font-style: normal;
-	background-color: red;
+.column1, .column2, .column3{
+	width: 30%;
+	margin: 1%;
+	float: left;
+	border: 4px double #000;
 }
 
-div.img1
-{
-	float: right;
+.column3{
+	margin-right: 0%;
 }
 
-div .img2
-{
-	float: right;
+#login{
+	width: 450px;
+	padding: 10px;
+	font-size: 110%;
+	font-family: "Courier New", Courier, monospace;
+	letter-spacing: 0.55em;	
+	border: 4px double #000;
+	background-color: #dcdcdc;
+	text-align: left;
+	border-color: black;
+	border-radius: 5px;
 }
 
-p 
-{
-	text-align: center;
-	margin-right:50px;
-	margin-left:50px;
-	color: #FFFFFF;
-	font-family: garamond, arial, helvetica, sans-serif;
-	font-size: 20px;	
-	background-color: red;}
+a {
+	color: #000000;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 6px 18px 5px 18px;
+}
 
-p2 
-{
-	text-align: center;
-	color:  #FFFFFF;
-	font-family: garamond, arial, helvetica, sans-serif;
-	font-size: 14px;	
-	background-color: red;
+
+a:hover, a.on {
+	color: #cc3333;
+	background-color: #ffffff;
 }
 
