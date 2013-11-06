@@ -89,7 +89,7 @@ public function p_login() {
     # But if we did, login succeeded! 
     } else {
 
-		echo 'You have logged in!';
+		// echo 'You have logged in!';
 	
         /* 
         Store this token in a cookie using setcookie()
@@ -103,12 +103,11 @@ public function p_login() {
         setcookie("token", $token, strtotime('+1 year'), '/');
 
         # Send them to the main page - or whever you want them to go
-        //Router::redirect("/");
+        Router::redirect("/");
 		
 		//  figure and enter one of those debug print statements she does.
 
-        Router::redirect("/users/posts/");
-
+        //Router::redirect("/users/posts/");
 		
     }
 
