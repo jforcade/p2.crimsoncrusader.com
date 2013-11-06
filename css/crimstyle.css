@@ -16,18 +16,18 @@ overflow: hidden;
 }
 
 #css-container {
-	background-color: lightgrey;
+	background-color: white;
 }
 
 #menu{
 	width: 90%;
-	height: 30px;
+	height: 20px;
 	margin: 1%;
 	float: center;
 	font-size: 120%;
 	font-family: "Courier New", Courier, monospace;
 	letter-spacing: 0.55em;
-	background-color: grey;
+	background-color: lightgrey;
 	text-align: center;
 }
 

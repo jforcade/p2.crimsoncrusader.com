@@ -27,6 +27,8 @@
 					<?php if($user): ?>
 						<a href='/posts/add'>Add Post</a>
 						<a href='/posts/'>View Posts</a>
+						<a href='/posts/'>Edit Posts</a>
+						<a href='/posts/'>Delete Posts</a>
 						<a href='/posts/users'>Follow Users</a>
 						<a href='/users/logout'>Logout</a>
 					<?php else: ?>
@@ -42,7 +44,7 @@
 
 	<?php if($user): ?>
 		You are logged in as <?=$user->first_name?> <?=$user->last_name?><br>
-	<?php else ?>
+	<?php else: ?>
 		<?php if(isset($msg)) echo $msg; ?>
 	<?php endif; ?>
 	
