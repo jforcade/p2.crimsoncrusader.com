@@ -1,10 +1,7 @@
 <form method='POST' action='/users/p_signup'>
 
-	<div class="row">
+	<div id="login">
 
-		<div class="col-md-4">
-		<br>
-		
 		First Name<br>
 		<input type='text' name='first_name'>
 		<br><br>
@@ -22,8 +19,6 @@
 		<br><br>
 
 	    <input type='submit' value='Sign up'>
-
-		</div>
 
 	</div>
 		

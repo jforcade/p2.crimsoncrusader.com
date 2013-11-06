@@ -1,17 +1,21 @@
 <h2>Log in</h2>
 
-<form method='POST' action='/users/p_login'>
+<div id="login">
 
-    Email: <br>
-    <input type='text' name='email'>
+	<form method='POST' action='/users/p_login'>
 
-    <br><br>
+		Email: <br>
+		<input type='text' name='email'>
 
-    Password: <br>
-    <input type='password' name='password'>
+		<br><br>
 
-    <br><br>
+		Password: <br>
+		<input type='password' name='password'>
 
-    <input type='submit' value='Log in'>
+		<br><br>
 
-</form>
+		<input type='submit' value='Log in'>
+
+	</form>
+
+</div>

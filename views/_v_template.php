@@ -22,7 +22,8 @@
 
 			<nav>
 				<menu>
-						<li><a href='/'>Home</a></li>
+					
+					<a href='/'>Home</a>
 						
 					<?php if($user): ?>
 						<a href='/posts/add'>Add Post</a>
@@ -44,8 +45,6 @@
 
 	<?php if($user): ?>
 		You are logged in as <?=$user->first_name?> <?=$user->last_name?><br>
-	<?php else: ?>
-		<?php if(isset($msg)) echo $msg; ?>
 	<?php endif; ?>
 	
 	<br><br>

@@ -5,21 +5,23 @@
 	background-color: white;
 }
 
-.col-md-4,.col-md-8{
-margin-bottom: -99999px;
-padding-bottom: 99999px;
-background-color: lightgrey;
-}
-
-.col-wrap{
-overflow: hidden; 
-}
-
 #css-container {
 	background-color: white;
 }
 
 #menu{
+	width: 90%;
+	height: 20px;
+	margin: 1%;
+	float: center;
+	font-size: 120%;
+	font-family: "Courier New", Courier, monospace;
+	letter-spacing: 0.55em;
+	background-color: lightgrey;
+	text-align: center;
+}
+
+#error{
 	width: 90%;
 	height: 20px;
 	margin: 1%;
@@ -40,6 +42,16 @@ overflow: hidden;
 	letter-spacing: 0.55em;	
 	background-color: #dcdcdc;
 	text-align: center;
+}
+
+.col-md-4,.col-md-8{
+margin-bottom: -99999px;
+padding-bottom: 99999px;
+background-color: lightgrey;
+}
+
+.col-wrap{
+overflow: hidden; 
 }
 
 .column1, .column2, .column3{

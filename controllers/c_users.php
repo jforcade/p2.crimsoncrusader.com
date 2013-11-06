@@ -79,12 +79,14 @@ public function p_login() {
     # If we didn't find a matching token in the database, it means login failed
     if(!$token) {
 
-		# So we can use $msg in views			
-		$this->template->set_global('msg', 'Login failed');
+        //# Send them back to the login failed page
 
-	
-        //# Send them back to the login page
-        //Router::redirect("/users/logfail/");
+        # Setup view
+            $this->template->content = View::instance('v_user_failed');
+            $this->template->title   = "Login Failed";
+
+        # Render template
+            echo $this->template;
 
     # But if we did, login succeeded! 
     } else {
@@ -113,6 +115,16 @@ public function p_login() {
 
 }
 
+    public function logfail() {
+
+        # Setup view
+            $this->template->content = View::instance('v_user_failed');
+            $this->template->title   = "Login Failed";
+
+        # Render template
+            echo $this->template;
+	}
+	
 	/*-------------------------------------------------------------------------------------------------
 	No view needed here, they just goto /users/logout, it logs them out and sends them
 	back to the homepage.	
@@ -141,17 +153,6 @@ public function p_login() {
 		# Setup view
 			$this->template->content = View::instance('v_posts');
 			$this->template->title   = "Posts";
-
-		# Render template
-			echo $this->template;
-
-	}
-
-	public function logfail() {
-
-		# Setup view
-			$this->template->content = View::instance('v_logfail');
-			$this->template->title   = "Login Failed";
 
 		# Render template
 			echo $this->template;
