@@ -33,7 +33,7 @@
 	text-align: center;
 }
 
-#welcome{
+#welcome-old{
 	width: 90%;
 	padding: 10px;
 	font-size: 100%;
@@ -42,6 +42,33 @@
 	letter-spacing: 0.55em;	
 	background-color: #dcdcdc;
 	text-align: center;
+}
+
+#welcome{
+	margin: 10px 120px 10px 100px;
+	width: auto;
+	padding: 10px;
+	font-size: 110%;
+	font-family: "Courier New", Courier, monospace;
+	letter-spacing: 0.55em;	
+	border: 4px double #000;
+	background-color: #dcdcdc;
+	text-align: center;
+	border-color: black;
+	border-radius: 5px;
+}
+
+#login{
+	width: 450px;
+	padding: 10px;
+	font-size: 110%;
+	font-family: "Courier New", Courier, monospace;
+	letter-spacing: 0.55em;	
+	border: 4px double #000;
+	background-color: #dcdcdc;
+	text-align: left;
+	border-color: black;
+	border-radius: 5px;
 }
 
 .col-md-4,.col-md-8{
@@ -63,19 +90,6 @@ overflow: hidden;
 
 .column3{
 	margin-right: 0%;
-}
-
-#login{
-	width: 450px;
-	padding: 10px;
-	font-size: 110%;
-	font-family: "Courier New", Courier, monospace;
-	letter-spacing: 0.55em;	
-	border: 4px double #000;
-	background-color: #dcdcdc;
-	text-align: left;
-	border-color: black;
-	border-radius: 5px;
 }
 
 a {
