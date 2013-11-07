@@ -16,38 +16,28 @@
 </head>
 
 <body>	
-	<div id="css-container">
 
-		<div id='menu'>
+	<div id="welcome">
 
-			<nav>
-				<menu>
-					
-					<a href='/'>Home</a>
-						
-					<?php if($user): ?>
-						<a href='/posts/add'>Add Post</a>
-						<a href='/posts/posts'>My Posts</a>
-						<a href='/posts/users'>Follow Users</a>
-						<a href='/posts/'>User Posts</a>
-						<a href='/posts/profile'>View Profile</a>
-						<a href='/users/logout'>Logout</a>
-					<?php else: ?>
-						<a href='/users/signup'>Sign Up</a>
-						<a href='/users/login'>Log In</a>
-					<?php endif; ?>
-				</menu>
-			</nav>
+		<?php if($user): ?>
+			You are logged in as <?=$user->first_name?> <?=$user->last_name?><br><br>
+		<?php endif; ?>
 
-		</div>
-
-    </div>
-
-	<?php if($user): ?>
-		You are logged in as <?=$user->first_name?> <?=$user->last_name?><br>
-	<?php endif; ?>
-	
-	<br><br>
+		<a href='/'>Home</a><br>
+			
+		<?php if($user): ?>
+			<a href='/posts/add'>Add Post</a>
+			<a href='/posts/posts'>My Posts</a><br>
+			<a href='/posts/users'>Follow Users</a>
+			<a href='/posts/'>User Posts</a><br>
+			<a href='/posts/profile'>View Profile</a>
+			<a href='/users/logout'>Logout</a>
+		<?php else: ?>
+			<a href='/users/signup'>Sign Up</a>
+			<a href='/users/login'>Log In</a>
+		<?php endif; ?>
+		
+	</div>
 	
 	<?php if(isset($content)) echo $content; ?>
 

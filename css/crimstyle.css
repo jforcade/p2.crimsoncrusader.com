@@ -13,11 +13,12 @@
 	width: 90%;
 	height: 20px;
 	margin: 1%;
+	color:white;
 	float: center;
 	font-size: 120%;
 	font-family: "Courier New", Courier, monospace;
 	letter-spacing: 0.55em;
-	background-color: lightgrey;
+	background-color: red;
 	text-align: center;
 }
 
@@ -48,11 +49,27 @@
 	margin: 10px 120px 10px 100px;
 	width: auto;
 	padding: 10px;
+	color: white;
 	font-size: 110%;
 	font-family: "Courier New", Courier, monospace;
-	letter-spacing: 0.55em;	
+	letter-spacing: 0.55em;
 	border: 4px double #000;
-	background-color: #dcdcdc;
+	background-color: red;
+	text-align: center;
+	border-color: black;
+	border-radius: 5px;
+}
+
+#nav{
+	margin: 10px 120px 10px 100px;
+	width: auto;
+	padding: 10px;
+	color: #FFFFFF;
+	font-size: 120%;
+	font-family: "Courier New", Courier, monospace;
+	letter-spacing: 0.55em;
+	border: 4px double #000;
+	background-color: red;
 	text-align: center;
 	border-color: black;
 	border-radius: 5px;
@@ -72,13 +89,13 @@
 }
 
 .col-md-4,.col-md-8{
-margin-bottom: -99999px;
-padding-bottom: 99999px;
-background-color: lightgrey;
+	margin-bottom: -99999px;
+	padding-bottom: 99999px;
+	background-color: lightgrey;
 }
 
 .col-wrap{
-overflow: hidden; 
+	overflow: hidden; 
 }
 
 .column1, .column2, .column3{
@@ -93,7 +110,8 @@ overflow: hidden;
 }
 
 a {
-	color: #000000;
+	color: #ffffff;
+	background-color:red;
 	text-transform: uppercase;
 	text-decoration: none;
 	padding: 6px 18px 5px 18px;

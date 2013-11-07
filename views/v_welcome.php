@@ -4,7 +4,7 @@
 		Crimson is an on-line helpdesk. 
 	</p>
 	<p id="welcome">
-		The microblog is a forum for helpdesk users.
+		And this microblog is a forum for helpdesk users.
 	</p>
 	<p id="welcome">
 		Register to view and share ideas on implementing your own online helpdesk.

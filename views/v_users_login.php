@@ -1,4 +1,4 @@
-<h2>Log in</h2>
+<h3>Log in</h3>
 
 <div id="login">
 
