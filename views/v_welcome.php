@@ -1,6 +1,6 @@
 <div >
 	<p id="welgreen">
-		Welcome to the Crimson Microblog.</br></br>
+		Welcome to the Crimson Microblog.<br><br>
 		Crimson is an on-line helpdesk. 
 	</p>
 	<p id="welyellow">
