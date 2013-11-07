@@ -41,7 +41,7 @@ class posts_controller extends base_controller {
 		
 		DB::instance(DB_NAME)->insert('posts',$_POST);
 		
-		Router::redirect('/posts/');
+		Router::redirect('/posts/posts');
 		
 	}
 	

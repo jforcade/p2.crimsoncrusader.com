@@ -34,18 +34,7 @@
 	text-align: center;
 }
 
-#welcome-old{
-	width: 90%;
-	padding: 10px;
-	font-size: 100%;
-	font-family: "Courier New", Courier, monospace;
-	foreground-color: red;
-	letter-spacing: 0.55em;	
-	background-color: #dcdcdc;
-	text-align: center;
-}
-
-#welcome{
+#welcome {
 	margin: 10px 120px 10px 100px;
 	width: auto;
 	padding: 10px;
@@ -59,6 +48,67 @@
 	border-color: black;
 	border-radius: 5px;
 }
+
+#welgreen{
+	margin: 10px 120px 10px 100px;
+	width: auto;
+	padding: 10px;
+	color: black;
+	font-size: 110%;
+	font-family: "Courier New", Courier, monospace;
+	letter-spacing: 0.55em;
+	border: 4px double #000;
+	background-color: #CCFFCC;
+	text-align: center;
+	border-color: black;
+	border-radius: 5px;
+}
+
+#welyellow{
+	margin: 10px 120px 10px 100px;
+	width: auto;
+	padding: 10px;
+	color: black;
+	font-size: 110%;
+	font-family: "Courier New", Courier, monospace;
+	letter-spacing: 0.55em;
+	border: 4px double #000;
+	background-color: lightyellow;
+	text-align: center;
+	border-color: black;
+	border-radius: 5px;
+}
+
+#welpink{
+	margin: 10px 120px 10px 100px;
+	width: auto;
+	padding: 10px;
+	color: black;
+	font-size: 110%;
+	font-family: "Courier New", Courier, monospace;
+	letter-spacing: 0.55em;
+	border: 4px double #000;
+	background-color: #FF99FF;
+	text-align: center;
+	border-color: black;
+	border-radius: 5px;
+}
+
+#features{
+	margin: 10px 120px 10px 100px;
+	width: auto;
+	padding: 10px;
+	color: black;
+	font-size: 110%;
+	font-family: "Courier New", Courier, monospace;
+	letter-spacing: 0.55em;
+	border: 4px double #000;
+	background-color: lightblue;
+	text-align: center;
+	border-color: black;
+	border-radius: 5px;
+}
+
 
 #nav{
 	margin: 10px 120px 10px 100px;

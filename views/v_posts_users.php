@@ -1,3 +1,5 @@
+<h3>Users to Follow</h3>
+
 <?php foreach($users as $user): ?>
 
 	<p id="login">

@@ -24,27 +24,51 @@ class users_controller extends base_controller {
 
 	public function p_signup() {
 
-		//echo "<pre>";
-		//	print_r($_POST);
-		//echo "<pre>";
-	
-		# More data we want stored with the user
-		$_POST['created']  = Time::now();
-		$_POST['modified'] = Time::now();
-
-		# Encrypt the password  
-		$_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);            
-
-		# Create an encrypted token via their email address and a random string
-		$_POST['token'] = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string()); 
-
-		# Insert this user into the database 
-		$user_id = DB::instance(DB_NAME)->insert("users", $_POST);
-
-		# For now, just confirm they've signed up - 
-		# You should eventually make a proper View for this
+		# Check if the email already exists in the database
 		
-		Router::redirect("/");
+		$q = "SELECT first_name 
+		FROM users 
+		WHERE email = '".$_POST['email']."'";
+
+		//print_r($_POST);
+
+		$first_name = DB::instance(DB_NAME)->select_field($q);
+
+		# If we find the email already exists void the sign up process
+		if($first_name) {
+
+			//# Send them to the signup failed page
+
+			# Setup view
+			$this->template->content = View::instance('v_signup_failed');
+			$this->template->title   = "Sign Up Failed";
+
+			# Render template
+			echo $this->template;
+
+		# But if not already there continue with the sign up process. 
+		} else {
+
+			# More data we want stored with the user
+			$_POST['created']  = Time::now();
+			$_POST['modified'] = Time::now();
+
+			# Encrypt the password  
+			$_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);            
+
+			# Create an encrypted token via their email address and a random string
+			$_POST['token'] = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string()); 
+
+			# Insert this user into the database 
+			$user_id = DB::instance(DB_NAME)->insert("users", $_POST);
+
+			# For now, just confirm they've signed up - 
+			# You should eventually make a proper View for this
+		
+			Router::redirect("/");
+
+		}	
+
 	}
 
 	public function login() {

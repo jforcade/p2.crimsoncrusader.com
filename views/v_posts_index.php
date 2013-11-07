@@ -1,6 +1,12 @@
-<?php foreach($posts as $post): ?>
+<h3>Posts</h3>
 
-	<strong><?=$post['first_name']?> posted on <?=Time::display($post['created'])?></strong><br>
-	<?=$post['content']?><br><br>
+<div id="login">
 	
-<?php endforeach; ?>
+	<?php foreach($posts as $post): ?>
+
+		<strong><?=$post['first_name']?> posted on <?=Time::display($post['created'])?></strong><br>
+		<?=$post['content']?><br><br>
+		
+	<?php endforeach; ?>
+	
+</div>

@@ -19,10 +19,6 @@
 
 	<div id="welcome">
 
-		<?php if($user): ?>
-			You are logged in as <?=$user->first_name?> <?=$user->last_name?><br><br>
-		<?php endif; ?>
-
 		<a href='/'>Home</a><br>
 			
 		<?php if($user): ?>
@@ -36,6 +32,11 @@
 			<a href='/users/signup'>Sign Up</a>
 			<a href='/users/login'>Log In</a>
 		<?php endif; ?>
+
+		<?php if($user): ?>
+			<br><br>You are logged in as <?=$user->first_name?> <?=$user->last_name?><br><br>
+		<?php endif; ?>
+
 		
 	</div>
 	

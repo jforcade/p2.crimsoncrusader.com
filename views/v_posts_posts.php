@@ -1,3 +1,5 @@
+<h3>My Posts</h3>
+
 <?php foreach($users as $user): ?>
 
 	<div id="login">
